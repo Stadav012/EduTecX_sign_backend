@@ -5,7 +5,7 @@ const router = express.Router();
 
 const ADMIN_CREDENTIALS = {
     username: 'Trueman',
-    password: '$2b$10$IvVZ0exceccCG0lPR3D4ZexsOMHblxlvkMHoDBYNeWnGLRFMMaCFy', // bcrypt hash for "password123"
+    password: '$2a$10$KRJNljS4ih4.VQ/Y89y/y.rEYlG4Dk3w81DN8LyI2wkWB3zPsJr5O', // bcrypt hash for "password123"
 };
 
 const SECRET_KEY = 'your_secret_key'; // Replace with an environment variable
@@ -14,11 +14,10 @@ const SECRET_KEY = 'your_secret_key'; // Replace with an environment variable
 router.post('/login', async (req, res) => {
     const { username, password } = req.body;
 
-    // const bcrypt = require('bcrypt');
-    // bcrypt.hash('password123', 10, (err, hash) => {
-    //     if (err) throw err;
-    //     console.log('Hashed password:', hash);
-    // });
+    bcrypt.hash('password123', 10, (err, hash) => {
+        if (err) throw err;
+        console.log('Hashed password:', hash);
+    });
 
     if (username !== ADMIN_CREDENTIALS.username) {
         return res
