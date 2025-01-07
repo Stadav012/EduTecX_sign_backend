@@ -1,6 +1,6 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt'); // For password hashing (if needed)
+const bcrypt = require('bcryptjs'); // instead of 'bcrypt' // For password hashing (if needed)
 const router = express.Router();
 
 const ADMIN_CREDENTIALS = {
