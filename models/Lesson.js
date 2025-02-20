@@ -15,7 +15,7 @@ const LessonSchema = new mongoose.Schema(
             required: true,
         },
         duration: {
-            type: Number, // duration in minutes
+            type: Number,
             required: true,
         },
         youtubeId: {
@@ -25,6 +25,11 @@ const LessonSchema = new mongoose.Schema(
         quizLink: {
             type: String,
             required: false,
+        },
+        baselineQuiz: {
+            type: String,
+            required: false,
+            default: null
         },
         pathId: {
             type: mongoose.Schema.Types.ObjectId,
